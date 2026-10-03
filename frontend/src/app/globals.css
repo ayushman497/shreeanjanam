@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary-gold: #C9A24A;
+  --primary-gold-light: #DFBA67;
+  --primary-gold-dark: #A98028;
+  --dark-green: #355E2C;
+  --dark-green-dark: #24411E;
+  --dark-green-light: #4A7A3F;
+  --earth-brown: #4A3B22;
+  --warm-ivory: #FFFFFF;
+  --warm-cream: #F8FAF7;
+  --text-main: #1F2937;
+  --text-muted: #57606A;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #FFFFFF;
+  color: #1F2937;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #1F2937;
+}
+
+/* Headings Typography */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Gold Gradient Utilities */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #DFBA67 0%, #C9A24A 50%, #A98028 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A24A 50%, #9C7726 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-green-gradient {
+  background: linear-gradient(135deg, #3E6E34 0%, #355E2C 50%, #22401C 100%);
+}
+
+.bg-heritage-pattern {
+  background-color: #FFFFFF;
+  background-image: radial-gradient(#C9A24A 0.5px, transparent 0.5px), radial-gradient(#355E2C 0.5px, #FFFFFF 0.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  opacity: 0.03;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 74, 0.2);
+}
+
+.glass-dark {
+  background: rgba(36, 65, 30, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 74, 0.3);
+}
+
+/* Luxury Card Hover */
+.luxury-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -4px rgba(53, 94, 44, 0.1), 0 0 0 1px rgba(201, 162, 74, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A24A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A98028;
+}
+
+/* Pulse Animation for WhatsApp */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulse-gold 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Badge Glow */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(201, 162, 74, 0.35);
+}

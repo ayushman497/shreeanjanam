@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: anjanam_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PROJECT_NAME=Anjanam Foods API
+      - SECRET_KEY=anjanam_foods_production_secret_key_2025_indore
+      - DATABASE_URL=sqlite:///./anjanam.db
+      - DEFAULT_ADMIN_USERNAME=admin
+      - DEFAULT_ADMIN_PASSWORD=Anjanam@2025!
+      - WHATSAPP_PHONE=9243129300
+      - CONTACT_PHONE=8827685003
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/anjanam.db:/app/anjanam.db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: anjanam_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+    depends_on:
+      - backend
