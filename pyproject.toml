@@ -1,2 +1,2 @@
-[tool.vercel]
-entrypoint = "backend.app.main:app"
+# Anjanam Foods — pyproject.toml
+# Python backend tooling configuration (backend deployed separately, not on Vercel)
